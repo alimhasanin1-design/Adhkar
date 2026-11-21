@@ -23,6 +23,16 @@ h1{margin:0;font-family:Amiri,'Traditional Arabic',serif;color:var(--gold);font-
 .sub{color:var(--mut);font-size:14px}
 .wrap{max-width:760px;margin:0 auto;padding:0 12px 40px}
 @media(min-width:900px){.wrap{max-width:900px}.ar{font-size:27px}h1{font-size:38px}nav{flex-wrap:wrap;justify-content:center}}
+#nx{text-align:center;padding:18px 10px}
+#nx .big{font-family:Amiri,serif;font-size:34px;color:var(--gold)}
+#cd{font-size:30px;font-weight:700;letter-spacing:2px;direction:ltr}
+.pt{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-top:12px}
+.pt div{background:#0a2c22;border:1px solid var(--line);border-radius:12px;padding:8px 4px;text-align:center}
+.pt .on{border-color:var(--gold);background:#164c3b}
+.pt b{display:block;color:var(--gold)}
+select,.btn{padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:#0a2c22;color:var(--txt);font:inherit}
+.btn{cursor:pointer}.btn.g{background:var(--gold);color:#143;border-color:var(--gold);font-weight:700}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
 #inst{display:none;margin:8px auto;padding:9px 18px;border-radius:20px;border:0;background:var(--gold);color:#143;font:inherit;font-weight:700;cursor:pointer}
 input[type=search]{width:100%;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:#0a2c22;color:var(--txt);font:inherit;margin:10px 0}
 nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
@@ -62,7 +72,7 @@ th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:center}
 </div>
 <script>
 const T=[
-["morning","أذكار الصباح"],["evening","أذكار المساء"],["sleep","أذكار النوم"],["salah","بعد الصلاة"],["acc","محاسبة النفس"],["stats","الجداول"]];
+["prayer","مواقيت الصلاة"],["morning","أذكار الصباح"],["evening","أذكار المساء"],["sleep","أذكار النوم"],["salah","بعد الصلاة"],["acc","محاسبة النفس"],["stats","الجداول"]];
 const KURSI="ٱللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ٱلْحَيُّ ٱلْقَيُّومُ ۚ لَا تَأْخُذُهُۥ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُۥ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ۗ مَن ذَا ٱلَّذِى يَشْفَعُ عِندَهُۥٓ إِلَّا بِإِذْنِهِۦ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَىْءٍ مِّنْ عِلْمِهِۦٓ إِلَّا بِمَا شَآءَ ۚ وَسِعَ كُرْسِيُّهُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ ۖ وَلَا يَـُٔودُهُۥ حِفْظُهُمَا ۚ وَهُوَ ٱلْعَلِىُّ ٱلْعَظِيمُ";
 const MAW="قُلْ هُوَ اللَّهُ أَحَدٌ، اللَّهُ الصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ.\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ، مِنْ شَرِّ مَا خَلَقَ، وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ، وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ.\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ، مَلِكِ النَّاسِ، إِلَهِ النَّاسِ، مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ، الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ، مِنَ الْجِنَّةِ وَالنَّاسِ.";
 const BAQ="آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ. لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا ۚ أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ.";
@@ -101,6 +111,10 @@ sleep:[
 ["اللهم قني عذابك","اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ.",3,"أبو داود 5045، وصححه الألباني (يضع يده اليمنى تحت خده)"],
 ["التسبيح والتحميد والتكبير","سُبْحَانَ اللَّهِ (33)، الْحَمْدُ لِلَّهِ (33)، اللَّهُ أَكْبَرُ (34).",100,"البخاري 3705، ومسلم 2727 (خير لكما من خادم)"]
 ],
+adhan:[
+["ترديد الأذان","يقول السامع مثل ما يقول المؤذن، إلا في «حيَّ على الصلاة، حيَّ على الفلاح» فيقول: لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ. ثم يصلي على النبي ﷺ، ثم يسأل الله له الوسيلة.",1,"البخاري 613، ومسلم 384"],
+["الدعاء بعد الأذان","اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ.",1,"البخاري 614 (حلَّت له شفاعتي يوم القيامة)"]
+],
 salah:[
 ["الاستغفار ودعاء السلام","أَسْتَغْفِرُ اللَّهَ (ثلاثًا)، اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ.",1,"مسلم 591"],
 ["التسبيح والتحميد والتكبير","سُبْحَانَ اللَّهِ (33)، وَالْحَمْدُ لِلَّهِ (33)، وَاللَّهُ أَكْبَرُ (33)، ثم تمام المئة: "+TAHLIL,1,"مسلم 597 (غُفرت خطاياه وإن كانت مثل زبد البحر)"],
@@ -116,8 +130,52 @@ const dk=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+Strin
 const today=dk(new Date());
 const hj=(d,o)=>new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura",o).format(d);
 $("#hdate").textContent=hj(new Date(),{weekday:"long",day:"numeric",month:"long",year:"numeric"});
-let tab="morning",counts=ld("adh:c:"+today,{}),acc=ld("adh:a:"+today,{});
+let tab="prayer",counts=ld("adh:c:"+today,{}),acc=ld("adh:a:"+today,{});
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\n/g,"<br>");
+
+const CITIES={"القاهرة":[30.0444,31.2357],"الإسكندرية":[31.2001,29.9187],"الجيزة":[30.0131,31.2089],"طنطا":[30.7865,31.0004],"المنصورة":[31.0409,31.3785],"أسيوط":[27.1809,31.1837],"الأقصر":[25.6872,32.6396],"أسوان":[24.0889,32.8998],"بورسعيد":[31.2653,32.3019],"مكة المكرمة":[21.3891,39.8579],"المدينة المنورة":[24.4672,39.6111],"الرياض":[24.7136,46.6753],"جدة":[21.4858,39.1925],"عمّان":[31.9454,35.9284],"القدس":[31.7683,35.2137],"دبي":[25.2048,55.2708]};
+const METH={egy:["الهيئة المصرية العامة للمساحة",19.5,17.5],mwl:["رابطة العالم الإسلامي",18,17],umm:["أم القرى",18.5,"90"],khi:["كراتشي",18,18]};
+const PN={fajr:"الفجر",sunrise:"الشروق",dhuhr:"الظهر",asr:"العصر",maghrib:"المغرب",isha:"العشاء"};
+let P=ld("adh:p",{city:"القاهرة",lat:30.0444,lng:31.2357,m:"egy",hanafi:false,rem:false});
+const R=Math.PI/180,sn=x=>Math.sin(x*R),cs=x=>Math.cos(x*R),tn=x=>Math.tan(x*R);
+const fx=(a,b)=>{a=a-b*Math.floor(a/b);return a<0?a+b:a};
+function sunP(jd){const D=jd-2451545,g=fx(357.529+0.98560028*D,360),q=fx(280.459+0.98564736*D,360),L=fx(q+1.915*sn(g)+0.02*sn(2*g),360),e=23.439-3.6e-7*D;let ra=Math.atan2(cs(e)*sn(L),cs(L))/R/15;ra=fx(ra,24);return{d:Math.asin(sn(e)*sn(L))/R,eq:q/15-ra}}
+function jdOf(y,m,d){if(m<=2){y--;m+=12}const A=Math.floor(y/100),B=2-A+Math.floor(A/4);return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+d+B-1524.5}
+function calc(date){const lat=P.lat,lng=P.lng,tz=-date.getTimezoneOffset()/60,jd=jdOf(date.getFullYear(),date.getMonth()+1,date.getDate())-lng/360,M=METH[P.m];
+const mid=t=>fx(12-sunP(jd+t).eq,24);
+const sa=(ang,t,ccw)=>{const d=sunP(jd+t).d,x=(-sn(ang)-sn(d)*sn(lat))/(cs(d)*cs(lat));if(x>1||x<-1)return NaN;const h=Math.acos(x)/R/15;return mid(t)+(ccw?-h:h)};
+const asr=(f,t)=>{const d=sunP(jd+t).d,a=-Math.atan(1/(f+tn(Math.abs(lat-d))))/R;return sa(a,t,false)};
+let T={fajr:5,sunrise:6,dhuhr:12,asr:13,maghrib:18,isha:18};
+for(let i=0;i<2;i++){const p=k=>T[k]/24;T={fajr:sa(M[1],p("fajr"),true),sunrise:sa(0.833,p("sunrise"),true),dhuhr:mid(p("dhuhr")),asr:asr(P.hanafi?2:1,p("asr")),maghrib:sa(0.833,p("maghrib"),false),isha:null};T.isha=M[2]==="90"?T.maghrib+1.5:sa(M[2],18/24,false)}
+const off=tz-lng/15,b=new Date(date.getFullYear(),date.getMonth(),date.getDate()).getTime(),o={};
+for(const k in T)o[k]=isNaN(T[k])?null:new Date(b+(T[k]+off)*3600000);return o}
+const fm=d=>d?d.toLocaleTimeString("ar-EG",{hour:"numeric",minute:"2-digit",hour12:true}):"—";
+function nextP(){const n=new Date(),a=calc(n),l=["fajr","dhuhr","asr","maghrib","isha"];for(const k of l)if(a[k]&&a[k]>n)return{k,t:a[k],all:a};const t=new Date(n);t.setDate(t.getDate()+1);const b=calc(t);return{k:"fajr",t:b.fajr,all:a}}
+function prayerView(){const n=nextP(),a=n.all;
+const opts=Object.keys(CITIES).map(c=>`<option ${c===P.city?"selected":""}>${c}</option>`).join("")+(P.city==="موقعي"?'<option selected>موقعي</option>':"");
+const mo=Object.entries(METH).map(([k,v])=>`<option value="${k}" ${k===P.m?"selected":""}>${v[0]}</option>`).join("");
+return `<div class="card" id="nx"><div class="sub">الصلاة القادمة</div><div class="big" id="nn">${PN[n.k]}</div><div id="cd"></div><div class="sub" id="nt">${fm(n.t)}</div></div>
+<div class="card"><div class="pt">${["fajr","sunrise","dhuhr","asr","maghrib","isha"].map(k=>`<div class="${k===n.k?"on":""}"><b>${PN[k]}</b>${fm(a[k])}</div>`).join("")}</div>
+<div class="sub" style="margin-top:8px">المدينة: ${P.city} — حساب الأوقات فلكي ويعمل بلا إنترنت، ويُستحسن مقارنته بتقويم بلدك المعتمد.</div></div>
+<div class="card"><div class="ctl"><select id="city">${opts}</select><button class="btn g" id="loc">تحديد موقعي</button></div>
+<div class="ctl"><select id="meth">${mo}</select><label><input type="checkbox" id="han" ${P.hanafi?"checked":""}> العصر على المذهب الحنفي</label></div>
+<div class="ctl"><label><input type="checkbox" id="rem" ${P.rem?"checked":""}> تنبيه قبل الصلاة بربع ساعة بصوت «قم إلى الصلاة»</label></div>
+<div class="ctl"><button class="btn" id="tst">جرّب الصوت</button><span class="sub">يعمل والتطبيق مفتوح؛ وقد يمنعه المتصفح في الخلفية.</span></div></div>
+<div style="font-weight:700;color:var(--gold);margin-top:14px">أذكار الأذان</div>`+D.adhan.map((x,i)=>card("adhan",i,x)).join("")}
+function speak(m){try{const u=new SpeechSynthesisUtterance(m);u.lang="ar-SA";u.rate=.9;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function notify(t){try{if("Notification" in window&&Notification.permission==="granted")new Notification("مواقيت الصلاة",{body:t,icon:"./icon-192.png"})}catch(e){}}
+let fired=ld("adh:f",{});
+function tick(){const n=nextP(),ms=n.t-new Date();
+if(tab==="prayer"&&$("#cd")){const s=Math.max(0,Math.floor(ms/1000)),f=x=>String(x).padStart(2,"0");$("#cd").textContent=f(Math.floor(s/3600))+":"+f(Math.floor(s%3600/60))+":"+f(s%60);if($("#nn").textContent!==PN[n.k]){render()}}
+if(P.rem&&ms<=900000&&ms>0){const key=n.t.getTime();if(!fired[key]){fired={};fired[key]=1;sv("adh:f",fired);speak("قم إلى الصلاة");notify("بقي ربع ساعة على صلاة "+PN[n.k])}}}
+function bindPrayer(){const g=i=>document.getElementById(i);if(!g("city"))return;
+g("city").onchange=e=>{const c=CITIES[e.target.value];if(c){P.city=e.target.value;P.lat=c[0];P.lng=c[1];sv("adh:p",P);render()}};
+g("meth").onchange=e=>{P.m=e.target.value;sv("adh:p",P);render()};
+g("han").onchange=e=>{P.hanafi=e.target.checked;sv("adh:p",P);render()};
+g("rem").onchange=e=>{P.rem=e.target.checked;sv("adh:p",P);if(P.rem){speak("");try{if("Notification" in window&&Notification.permission==="default")Notification.requestPermission()}catch(x){}}};
+g("tst").onclick=()=>speak("قم إلى الصلاة");
+g("loc").onclick=()=>{if(!navigator.geolocation){alert("المتصفح لا يدعم تحديد الموقع");return}navigator.geolocation.getCurrentPosition(p=>{P.city="موقعي";P.lat=p.coords.latitude;P.lng=p.coords.longitude;sv("adh:p",P);render()},()=>alert("تعذر تحديد الموقع؛ اختر مدينتك من القائمة."),{timeout:10000})}}
+setInterval(tick,1000);
 function nav(){$("#tabs").innerHTML=T.map(t=>`<button class="${t[0]===tab?"on":""}" data-t="${t[0]}">${t[1]}</button>`).join("")}
 function card(g,i,x){const id=g+i,c=counts[id]||0,n=x[2],fin=c>=n;
 return `<div class="card"><div style="font-weight:700;color:var(--gold)">${x[0]}</div><div class="ar">${esc(x[1])}</div><div class="meta"><span class="src">المصدر: ${x[3]}</span><button class="cnt ${fin?"fin":""}" data-c="${id}" data-n="${n}">${fin?"تم ✓":"التكرار: "+c+" / "+n}</button></div></div>`}
@@ -125,9 +183,9 @@ function render(){nav();const q=$("#q").value.trim();let h="";
 if(q){const norm=s=>s.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي");const k=norm(q);let f=0;
 for(const g in D)D[g].forEach((x,i)=>{if(norm(x[0]+" "+x[1]+" "+x[3]).includes(k)){f++;h+=card(g,i,x)}});
 $("#out").innerHTML=(f?`<div class="sub">نتائج البحث: ${f}</div>`:'<div class="card">لا توجد نتائج.</div>')+h;return}
-if(D[tab])h=D[tab].map((x,i)=>card(tab,i,x)).join("");
+if(tab==="prayer")h=prayerView();else if(D[tab])h=D[tab].map((x,i)=>card(tab,i,x)).join("");
 else if(tab==="acc")h=accView();else h=stats();
-$("#out").innerHTML=h}
+$("#out").innerHTML=h;if(tab==="prayer"){bindPrayer();tick()}}
 function accView(){const done=ACC.filter((_,i)=>acc[i]===1).length;
 return `<div class="card"><div style="font-weight:700;color:var(--gold)">محاسبة النفس لهذا اليوم</div><div class="sub">«حاسبوا أنفسكم قبل أن تحاسبوا» — أثر عن عمر رضي الله عنه، رواه ابن أبي شيبة وغيره. أجب بصدق: تم أو لم يتم.</div><div class="bar" style="margin:10px 0"><i style="width:${done/ACC.length*100}%"></i></div>`+
 ACC.map((t,i)=>`<div class="row"><span>${t}</span><span class="tg"><button class="y ${acc[i]===1?"on":""}" data-a="${i}" data-v="1">تم</button><button class="n ${acc[i]===0?"on":""}" data-a="${i}" data-v="0">لم يتم</button></span></div>`).join("")+`<div class="sub" style="margin-top:8px">أنجزت ${done} من ${ACC.length}. وما قصّرت فيه فاستغفر الله وجدّد العزم غدًا.</div></div>`}
